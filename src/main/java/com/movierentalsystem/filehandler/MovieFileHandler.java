@@ -11,12 +11,19 @@ import java.util.List;
 public class MovieFileHandler {
 
     // Text file eka thiyena path eka
-    private static final String FILE_PATH = "data/movies.txt";
+    private static final String FILE_PATH = "MovieRentalSystem/data/movies.txt";
 
     // 1. Create - Aluth movie ekak text file ekata save kirima
+    // 1. Create - Aluth movie ekak text file ekata save kirima
     public void saveMovie(Movie movie) {
+        // File path eka hadala, folder eka nattam auto create kirima
+        File file = new File(FILE_PATH);
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs(); // data folder eka nattam meken hadanawa
+        }
+
         // try-with-resources use karanne file eka auto close wenna
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
             String line = "";
 
             // Polymorphism saha instanceof use karala object type eka anduraganeema

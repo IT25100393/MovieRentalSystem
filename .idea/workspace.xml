@@ -4,12 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="673a73e1-dd55-4dc1-9e73-feca2b913e1b" name="Changes" comment="Initial base project setup">
-      <change afterPath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/filehandler/MovieFileHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/DigitalMovie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/PhysicalDVD.java" afterDir="false" />
+    <list default="true" id="673a73e1-dd55-4dc1-9e73-feca2b913e1b" name="Changes" comment="Add Movie models and file handler">
+      <change afterPath="$PROJECT_DIR$/data/admins.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/movies.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/servlet/MovieServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/add-movie.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/admins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/movies.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/payments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/payments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/rentals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/rentals.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/reviews.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/reviews.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/MovieRentalSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/MovieRentalSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/ServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/filehandler/MovieFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/filehandler/MovieFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/DigitalMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/model/DigitalMovie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/model/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/java/com/movierentalsystem/model/PhysicalDVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/movierentalsystem/model/PhysicalDVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieRentalSystem/src/test/java/com/movierentalsystem/MovieRentalSystemApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/movierentalsystem/MovieRentalSystemApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +65,22 @@
     &quot;accountId&quot;: &quot;5df1351e-8a73-4eed-8848-cfd13f15b7ba&quot;
   }
 }</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -60,10 +92,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Smart Tomcat.Tomcat: MovieRentalSystem.executor": "Run",
     "git-widget-placeholder": "feature/member02-movie-mgmt",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -73,8 +107,57 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SLIIT\1Y2S\OOP\Project\MovieRentalSystem" />
+      <recent name="D:\SLIIT\1Y2S\OOP\Project\MovieRentalSystem\MovieRentalSystem\src\main\webapp" />
       <recent name="D:\SLIIT\1Y2S\OOP\Project\MovieRentalSystem\MovieRentalSystem" />
     </key>
+  </component>
+  <component name="RunManager" selected="Smart Tomcat.Tomcat: MovieRentalSystem">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.movierentalsystem.Main" />
+      <module name="MovieRentalSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.movierentalsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat: MovieRentalSystem" type="com.poratu.idea.plugins.tomcat" temporary="true">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="" />
+      <option name="contextPath" value="/MovieRentalSystem" />
+      <option name="docBase" value="$PROJECT_DIR$/MovieRentalSystem/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/10.1.52" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../Downloads/apache-tomcat-10.1.52-windows-x64/apache-tomcat-10.1.52" />
+          <option name="version" value="10.1.52.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="MovieRentalSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Smart Tomcat.Tomcat: MovieRentalSystem" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772876086115</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Movie models and file handler">
+      <option name="closed" value="true" />
+      <created>1772879313544</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772879313544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +218,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial base project setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial base project setup" />
+    <MESSAGE value="Add Movie models and file handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Movie models and file handler" />
   </component>
 </project>
