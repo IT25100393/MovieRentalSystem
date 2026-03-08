@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.movierentalsystem.model.Movie;
+
 @WebServlet("/MovieServlet")
 public class MovieServlet extends HttpServlet {
     private MovieFileHandler fileHandler = new MovieFileHandler();
