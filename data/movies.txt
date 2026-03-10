@@ -1,9 +1,1 @@
-DVD,M001,Inception,Sci-Fi,Christopher Nolan,2010,true,DVD-001,Good,Shelf A1
-DIGITAL,M002,The Matrix,Action,Lana Wachowski,1999,true,http://matrix.stream,4.5,1080p
-DVD,M001,Inception,Sci-Fi,Christopher Nolan,2010,true,DVD-001,Good,Shelf A1
-DIGITAL,M002,The Matrix,Action,Lana Wachowski,1999,true,http://matrix.stream,4.5,1080p
-DVD,M001,Inception,Sci-Fi,Christopher Nolan,2010,true,DVD-001,Good,Shelf A1
-DIGITAL,M002,The Matrix,Action,Lana Wachowski,1999,true,http://matrix.stream,4.5,1080p
-DVD,M001,Inception,Sci-Fi,Christopher Nolan,2010,true,DVD-001,Good,Shelf A1
-DIGITAL,M002,The Matrix,Action,Lana Wachowski,1999,true,http://matrix.stream,4.5,1080p
-DVD,M1772941710119,rvrvv,btrbtb,bb,2000,true,null,null,btbtb
+DVD,M1773131491622,trvt,btbteb,hvbkkm,2000,true,subnklml; 26,New,vybjkn
