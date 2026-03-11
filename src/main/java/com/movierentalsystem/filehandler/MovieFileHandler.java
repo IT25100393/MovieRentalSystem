@@ -10,32 +10,26 @@ import java.util.List;
 
 public class MovieFileHandler {
 
-    // Text file eka thiyena path eka
-    private static final String FILE_PATH = "MovieRentalSystem/data/movies.txt";
+    // FILE_PATH eka me widiyata define karanna ona
+    private static final String FILE_PATH = "data/movies.txt";
 
-    // 1. Create - Aluth movie ekak text file ekata save kirima
     // 1. Create - Aluth movie ekak text file ekata save kirima
     public void saveMovie(Movie movie) {
-        // File path eka hadala, folder eka nattam auto create kirima
         File file = new File(FILE_PATH);
         if (!file.getParentFile().exists()) {
-            file.getParentFile().mkdirs(); // data folder eka nattam meken hadanawa
+            file.getParentFile().mkdirs();
         }
 
-        // try-with-resources use karanne file eka auto close wenna
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
             String line = "";
 
-            // Polymorphism saha instanceof use karala object type eka anduraganeema
             if (movie instanceof PhysicalDVD) {
                 PhysicalDVD dvd = (PhysicalDVD) movie;
-                // Format: TYPE, ID, Title, Genre, Director, Year, isAvailable, dvdCode, condition, shelfLocation
                 line = "DVD," + dvd.getMovieId() + "," + dvd.getTitle() + "," + dvd.getGenre() + ","
                         + dvd.getDirector() + "," + dvd.getReleaseYear() + "," + dvd.isAvailable() + ","
                         + dvd.getDvdCode() + "," + dvd.getCondition() + "," + dvd.getShelfLocation();
             } else if (movie instanceof DigitalMovie) {
                 DigitalMovie digital = (DigitalMovie) movie;
-                // Format: TYPE, ID, Title, Genre, Director, Year, isAvailable, streamingUrl, fileSize, resolution
                 line = "DIGITAL," + digital.getMovieId() + "," + digital.getTitle() + "," + digital.getGenre() + ","
                         + digital.getDirector() + "," + digital.getReleaseYear() + "," + digital.isAvailable() + ","
                         + digital.getStreamingUrl() + "," + digital.getFileSize() + "," + digital.getResolution();
@@ -49,13 +43,14 @@ public class MovieFileHandler {
             System.out.println("Error saving movie: " + e.getMessage());
         }
     }
+
     // 2. Read - Text file eke thiyena okkoma movies tika list ekakata ganeema
     public List<Movie> loadMovies() {
         List<Movie> movieList = new ArrayList<>();
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            return movieList; // File eka nathnam empty list ekak denawa
+            return movieList;
         }
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -72,11 +67,10 @@ public class MovieFileHandler {
                 int year = Integer.parseInt(data[5]);
                 boolean isAvailable = Boolean.parseBoolean(data[6]);
 
-                // File eke thiyena word eka anuwa hari object eka hadanawa
-                if (type.equals("DVD") && data.length == 10) {
+                if (type.equals("DVD") && data.length >= 10) {
                     PhysicalDVD dvd = new PhysicalDVD(id, title, genre, director, year, isAvailable, data[7], data[8], data[9]);
                     movieList.add(dvd);
-                } else if (type.equals("DIGITAL") && data.length == 10) {
+                } else if (type.equals("DIGITAL") && data.length >= 10) {
                     DigitalMovie digital = new DigitalMovie(id, title, genre, director, year, isAvailable, data[7], Double.parseDouble(data[8]), data[9]);
                     movieList.add(digital);
                 }
@@ -121,10 +115,9 @@ public class MovieFileHandler {
         }
     }
 
-    // Update saha Delete karama file eka aluthenma liyanna ona nisa use karana private method ekak (Abstraction)
     private void rewriteFile(List<Movie> movies) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(FILE_PATH, false))) {
-            // File eka clear karanawa false dapu nisa, passe loadMovies eken apu list eka use karala save karanawa
+            // File eka clear karanawa
         } catch (IOException e) {
             System.out.println("Error clearing file: " + e.getMessage());
         }

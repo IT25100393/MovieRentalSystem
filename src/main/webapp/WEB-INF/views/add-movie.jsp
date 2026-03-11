@@ -60,19 +60,46 @@
 
                         <div id="dvdFields">
                             <div class="mb-3">
+                                <label class="form-label">DVD Code</label>
+                                <input type="text" name="dvdCode" class="form-control" placeholder="e.g. DVD-001">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Condition</label>
+                                <select name="condition" class="form-select">
+                                    <option value="New">New</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Fair">Fair</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">Shelf Location</label>
-                                <input type="text" name="shelf" class="form-control">
+                                <input type="text" name="shelf" class="form-control" placeholder="e.g. Shelf A1">
                             </div>
                         </div>
 
                         <div id="digitalFields" style="display:none;">
                             <div class="mb-3">
                                 <label class="form-label">Streaming URL</label>
-                                <input type="text" name="url" class="form-control">
+                                <input type="text" name="url" class="form-control" placeholder="e.g. http://stream.link">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label class="form-label">File Size (GB)</label>
+                                    <input type="number" step="0.1" name="size" class="form-control" value="0.0">
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Resolution</label>
+                                    <select name="resolution" class="form-select">
+                                        <option value="1080p">1080p</option>
+                                        <option value="4K">4K</option>
+                                        <option value="720p">720p</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100 py-2 mt-3">Save Movie</button>
+                        <a href="MovieServlet?action=view" class="btn btn-outline-light w-100 py-2 mt-2">Cancel</a>
                     </form>
                 </div>
             </div>
