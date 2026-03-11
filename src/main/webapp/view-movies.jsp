@@ -84,8 +84,9 @@
                         <% } %>
 
                         <div class="mt-auto pt-3 d-flex gap-2">
-                            <button class="btn btn-warning btn-sm w-50">Edit</button>
-                            <button class="btn btn-danger btn-sm w-50">Delete</button>
+                            <a href="edit-movie.jsp?id=<%= m.getMovieId() %>" class="btn btn-warning btn-sm w-50">Edit</a>
+
+                            <a href="MovieServlet?action=delete&id=<%= m.getMovieId() %>" class="btn btn-danger btn-sm w-50" onclick="return confirm('Are you sure you want to delete this movie?');">Delete</a>
                         </div>
                     </div>
                 </div>
