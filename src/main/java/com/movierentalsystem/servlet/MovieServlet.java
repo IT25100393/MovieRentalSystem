@@ -14,7 +14,6 @@ import java.io.IOException;
 public class MovieServlet extends HttpServlet {
     private MovieFileHandler fileHandler = new MovieFileHandler();
 
-    // POST request eken Add saha Update deka karanawa
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
@@ -24,7 +23,7 @@ public class MovieServlet extends HttpServlet {
             String director = request.getParameter("director");
             int year = Integer.parseInt(request.getParameter("year"));
             String type = request.getParameter("type");
-            String id = "M" + System.currentTimeMillis(); // Auto ID generation
+            String id = "M" + System.currentTimeMillis();
 
             if ("DVD".equals(type)) {
                 String dvdCode = request.getParameter("dvdCode");
@@ -40,7 +39,8 @@ public class MovieServlet extends HttpServlet {
                 DigitalMovie digital = new DigitalMovie(id, title, genre, director, year, true, url, size, resolution);
                 fileHandler.saveMovie(digital);
             }
-            response.sendRedirect("add-movie.jsp?status=success");
+            // Update: Redirect to the Servlet's add action instead of direct JSP
+            response.sendRedirect("MovieServlet?action=add&status=success");
 
         } else if ("update".equals(action)) {
             String id = request.getParameter("id");
@@ -65,20 +65,31 @@ public class MovieServlet extends HttpServlet {
                 DigitalMovie digital = new DigitalMovie(id, title, genre, director, year, isAvailable, url, size, resolution);
                 fileHandler.updateMovie(digital);
             }
-            response.sendRedirect("view-movies.jsp?status=updated");
+            // Update: Redirect to the Servlet's view action instead of direct JSP
+            response.sendRedirect("MovieServlet?action=view&status=updated");
         }
     }
 
-    // GET request eken Delete operation eka karanawa
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
+        // Routing logic: Forward to WEB-INF based on action
         if ("delete".equals(action)) {
             String id = request.getParameter("id");
             if (id != null) {
                 fileHandler.deleteMovie(id);
             }
-            response.sendRedirect("view-movies.jsp?status=deleted");
+            response.sendRedirect("MovieServlet?action=view&status=deleted");
+        }
+        else if ("add".equals(action)) {
+            request.getRequestDispatcher("/WEB-INF/views/add-movie.jsp").forward(request, response);
+        }
+        else if ("edit".equals(action)) {
+            request.getRequestDispatcher("/WEB-INF/views/edit-movie.jsp").forward(request, response);
+        }
+        else {
+            // Default action: View Movies
+            request.getRequestDispatcher("/WEB-INF/views/view-movies.jsp").forward(request, response);
         }
     }
 }

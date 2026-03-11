@@ -22,7 +22,7 @@
         <div class="container">
             <a class="navbar-brand text-warning fw-bold" href="index.jsp">🎬 MOVIEFLEX</a>
             <div class="d-flex align-items-center">
-                <a href="add-movie.jsp" class="btn btn-outline-warning btn-sm">Add New Movie</a>
+                <a href="MovieServlet?action=add" class="btn btn-outline-warning">Add New Movie</a>
             </div>
         </div>
     </nav>
@@ -84,7 +84,7 @@
                         <% } %>
 
                         <div class="mt-auto pt-3 d-flex gap-2">
-                            <a href="edit-movie.jsp?id=<%= m.getMovieId() %>" class="btn btn-warning btn-sm w-50">Edit</a>
+                            <a href="MovieServlet?action=edit&id=<%= m.getMovieId() %>" class="btn btn-warning btn-sm w-50">Edit</a>
 
                             <a href="MovieServlet?action=delete&id=<%= m.getMovieId() %>" class="btn btn-danger btn-sm w-50" onclick="return confirm('Are you sure you want to delete this movie?');">Delete</a>
                         </div>

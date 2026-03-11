@@ -18,7 +18,7 @@
     }
 
     if(movieToEdit == null) {
-        response.sendRedirect("view-movies.jsp?error=notfound");
+        response.sendRedirect("MovieServlet?action=view&error=notfound");
         return;
     }
 
@@ -117,7 +117,7 @@
                         <% } %>
 
                         <button type="submit" class="btn btn-warning w-100 py-2 mt-3 fw-bold">Update Movie</button>
-                        <a href="view-movies.jsp" class="btn btn-outline-light w-100 py-2 mt-2">Cancel</a>
+                        <a href="MovieServlet?action=view" class="btn btn-outline-light w-100 py-2 mt-2">Cancel</a>
                     </form>
                 </div>
             </div>
