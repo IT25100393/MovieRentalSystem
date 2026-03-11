@@ -56,7 +56,7 @@ public class MovieFileHandler {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
+                String[] data = line.split("," , -1);
                 if (data.length < 7) continue;
 
                 String type = data[0];
