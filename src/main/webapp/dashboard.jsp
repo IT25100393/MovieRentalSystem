@@ -7,7 +7,7 @@
 </head>
 <body class="p-5">
     <div class="container border p-4 bg-white shadow rounded">
-        <h2>Welcome, ${sessionScope.user}!</h2>
+        <h2>Welcome, ${sessionScope.userName}!</h2>
         <p>You have successfully logged into the Movie Rental System.</p>
         <hr>
         <a href="logout" class="btn btn-danger">Logout</a>
