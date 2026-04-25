@@ -10,9 +10,18 @@ public class UserFileHandler {
 
     // User කෙනෙක්ව file එකට save කරන්න (Create)
     public void saveUser(User user) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            bw.write(user.getUserId() + "," + user.getName() + "," + user.getEmail() + "," + user.getPassword() + "," + user.getMembershipType());
-            bw.newLine();
+        try {
+            File file = new File(FILE_PATH);
+            // Folder එක නැත්නම් හදනවා
+            if (file.getParentFile() != null && !file.getParentFile().exists()) {
+                file.getParentFile().mkdirs();
+            }
+
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
+                bw.write(user.getUserId() + "," + user.getName() + "," + user.getEmail() + "," + user.getPassword() + "," + user.getMembershipType());
+                bw.newLine();
+                System.out.println("User saved successfully to: " + file.getAbsolutePath()); // Console එකේ පේන්න
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
