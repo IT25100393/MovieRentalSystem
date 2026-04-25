@@ -7,21 +7,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/registerUser")
+@WebServlet("/register")
 public class UserServlet extends HttpServlet {
     private UserFileHandler fileHandler = new UserFileHandler();
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("userId");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String type = request.getParameter("membershipType");
+        String type = request.getParameter("type");
 
         User newUser;
-        // Inheritance & Polymorphism පාවිච්චි කිරීම
         if ("Premium".equals(type)) {
             newUser = new PremiumUser(id, name, email, password);
         } else {
@@ -29,6 +26,6 @@ public class UserServlet extends HttpServlet {
         }
 
         fileHandler.saveUser(newUser);
-        response.sendRedirect("login.jsp?status=success");
+        response.sendRedirect("login.jsp");
     }
 }
